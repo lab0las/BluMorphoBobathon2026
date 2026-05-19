@@ -13,9 +13,10 @@ function App() {
     focusArea: 'abs',
     energyLevel: 'medium'
   });
-
-  // Debounce timer
-  const [debounceTimer, setDebounceTimer] = useState(null);
+  
+  // Theme and layout state
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileLayout, setIsMobileLayout] = useState(false);
 
   // Fetch workout recommendation
   const fetchWorkout = useCallback(async (params) => {
@@ -58,10 +59,28 @@ function App() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="App">
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'} ${isMobileLayout ? 'mobile-layout' : ''}`}>
       <header className="app-header">
         <div className="header-content">
-          <h1>🏋️ Workout Recommendation Service</h1>
+          <div className="header-top">
+            <h1>🏋️ Workout Recommendation Service</h1>
+            <div className="header-controls">
+              <button
+                className="toggle-button"
+                onClick={() => setIsMobileLayout(!isMobileLayout)}
+                title={isMobileLayout ? "Switch to Desktop Layout" : "Switch to Mobile Layout"}
+              >
+                {isMobileLayout ? '💻 Desktop' : '📱 Mobile'}
+              </button>
+              <button
+                className="toggle-button"
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              >
+                {isDarkMode ? '☀️ Light' : '🌙 Dark'}
+              </button>
+            </div>
+          </div>
           <p className="header-subtitle">Get a personalized workout plan tailored to your needs</p>
         </div>
       </header>
