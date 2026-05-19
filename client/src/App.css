@@ -23,12 +23,12 @@ body {
 
 /* Dark Mode (Default) */
 .App.dark-mode {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #e4e4e4;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  color: #e8e8e8;
 }
 
 .App.dark-mode body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
 }
 
 /* Light Mode */
@@ -49,8 +49,9 @@ body {
 }
 
 .dark-mode .app-header {
-  background: rgba(30, 30, 46, 0.95);
-  border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+  background: rgba(25, 25, 40, 0.98);
+  border-bottom: 2px solid rgba(139, 156, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .light-mode .app-header {
@@ -169,13 +170,13 @@ body {
 .form-container {
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .dark-mode .form-container {
-  background: rgba(30, 30, 46, 0.95);
-  border: 2px solid rgba(139, 156, 255, 0.3);
+  background: rgba(35, 35, 55, 0.98);
+  border: 2px solid rgba(139, 156, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .light-mode .form-container {
@@ -372,20 +373,21 @@ body {
 }
 
 .dark-mode .select-input {
-  background: rgba(22, 33, 62, 0.8);
-  border-color: rgba(139, 156, 255, 0.4);
-  color: #e4e4e4;
+  background: rgba(25, 30, 50, 0.95);
+  border-color: rgba(139, 156, 255, 0.5);
+  color: #e8e8e8;
 }
 
 .dark-mode .select-input:focus {
   outline: none;
   border-color: #8b9cff;
-  background: rgba(22, 33, 62, 0.95);
+  background: rgba(25, 30, 50, 1);
+  box-shadow: 0 0 0 3px rgba(139, 156, 255, 0.2);
 }
 
 .dark-mode .select-input option {
   background: #1a1a2e;
-  color: #e4e4e4;
+  color: #e8e8e8;
 }
 
 .light-mode .select-input {
@@ -423,16 +425,16 @@ body {
 }
 
 .dark-mode .energy-button {
-  background: rgba(22, 33, 62, 0.6);
-  border-color: rgba(139, 156, 255, 0.4);
-  color: #e4e4e4;
+  background: rgba(25, 30, 50, 0.9);
+  border-color: rgba(139, 156, 255, 0.5);
+  color: #e8e8e8;
 }
 
 .dark-mode .energy-button:hover {
   border-color: #8b9cff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(139, 156, 255, 0.3);
-  background: rgba(22, 33, 62, 0.8);
+  box-shadow: 0 6px 20px rgba(139, 156, 255, 0.4);
+  background: rgba(25, 30, 50, 1);
 }
 
 .dark-mode .energy-button.active {
@@ -487,8 +489,9 @@ body {
 }
 
 .dark-mode .workout-display {
-  background: rgba(30, 30, 46, 0.95);
-  border: 2px solid rgba(139, 156, 255, 0.3);
+  background: rgba(35, 35, 55, 0.98);
+  border: 2px solid rgba(139, 156, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .light-mode .workout-display {
@@ -511,8 +514,11 @@ body {
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid rgba(139, 156, 255, 0.2);
-  border-top: 4px solid #8b9cff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
 .dark-mode .spinner {
   border: 4px solid rgba(139, 156, 255, 0.2);
   border-top: 4px solid #8b9cff;
@@ -521,11 +527,6 @@ body {
 .light-mode .spinner {
   border: 4px solid rgba(102, 126, 234, 0.2);
   border-top: 4px solid #667eea;
-}
-
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
 }
 
 @keyframes spin {
@@ -544,8 +545,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.workout-display.error p {
+.dark-mode .workout-display.error p {
   color: #b8b8d1;
+}
+
+.light-mode .workout-display.error p {
+  color: #5a6c7d;
 }
 
 /* Empty State */
@@ -554,17 +559,30 @@ body {
   margin-bottom: 1rem;
 }
 
-.workout-display.empty h3 {
+.dark-mode .workout-display.empty h3 {
   color: #8b9cff;
   margin-bottom: 0.5rem;
 }
 
-.workout-display.empty p {
+.light-mode .workout-display.empty h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.dark-mode .workout-display.empty p {
   color: #b8b8d1;
 }
 
-.workout-display.loading p {
+.light-mode .workout-display.empty p {
+  color: #5a6c7d;
+}
+
+.dark-mode .workout-display.loading p {
   color: #b8b8d1;
+}
+
+.light-mode .workout-display.loading p {
+  color: #5a6c7d;
 }
 
 /* Workout Summary */
@@ -623,9 +641,16 @@ body {
 }
 
 .exercises-title {
-  color: #8b9cff;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.dark-mode .exercises-title {
+  color: #8b9cff;
+}
+
+.light-mode .exercises-title {
+  color: #667eea;
 }
 
 .exercises-grid {
@@ -636,17 +661,34 @@ body {
 
 /* Exercise Card */
 .exercise-card {
-  background: rgba(22, 33, 62, 0.6);
   border-radius: 12px;
   padding: 1.5rem;
-  border: 2px solid rgba(139, 156, 255, 0.3);
+  border: 2px solid;
   transition: all 0.2s;
 }
 
-.exercise-card:hover {
+.dark-mode .exercise-card {
+  background: rgba(28, 35, 58, 0.95);
+  border-color: rgba(139, 156, 255, 0.5);
+}
+
+.dark-mode .exercise-card:hover {
   border-color: #8b9cff;
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(139, 156, 255, 0.3);
+  box-shadow: 0 12px 32px rgba(139, 156, 255, 0.4);
+  background: rgba(28, 35, 58, 1);
+}
+
+.light-mode .exercise-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.light-mode .exercise-card:hover {
+  border-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  background: white;
 }
 
 .exercise-header {
@@ -671,9 +713,16 @@ body {
 }
 
 .exercise-name {
-  color: #e4e4e4;
   font-size: 1.25rem;
   flex: 1;
+}
+
+.dark-mode .exercise-name {
+  color: #e8e8e8;
+}
+
+.light-mode .exercise-name {
+  color: #2c3e50;
 }
 
 .exercise-details {
@@ -682,8 +731,17 @@ body {
   gap: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: rgba(30, 30, 46, 0.6);
   border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .exercise-details {
+  background: rgba(20, 25, 42, 0.9);
+  border: 1px solid rgba(139, 156, 255, 0.2);
+}
+
+.light-mode .exercise-details {
+  background: rgba(102, 126, 234, 0.08);
 }
 
 .detail-item {
@@ -695,14 +753,28 @@ body {
 
 .detail-label {
   font-size: 0.85rem;
-  color: #9999b3;
   margin-bottom: 0.25rem;
+}
+
+.dark-mode .detail-label {
+  color: #9999b3;
+}
+
+.light-mode .detail-label {
+  color: #718096;
 }
 
 .detail-value {
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.dark-mode .detail-value {
   color: #8b9cff;
+}
+
+.light-mode .detail-value {
+  color: #667eea;
 }
 
 .exercise-equipment {
@@ -711,10 +783,20 @@ body {
   gap: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  background: rgba(30, 30, 46, 0.6);
   border-radius: 8px;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .exercise-equipment {
+  background: rgba(20, 25, 42, 0.9);
   color: #b8b8d1;
+  border: 1px solid rgba(139, 156, 255, 0.2);
+}
+
+.light-mode .exercise-equipment {
+  background: rgba(102, 126, 234, 0.08);
+  color: #5a6c7d;
 }
 
 .equipment-icon {
@@ -722,10 +804,17 @@ body {
 }
 
 .exercise-description {
-  color: #b8b8d1;
   line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 0.95rem;
+}
+
+.dark-mode .exercise-description {
+  color: #b8b8d1;
+}
+
+.light-mode .exercise-description {
+  color: #5a6c7d;
 }
 
 .exercise-tags {
@@ -745,16 +834,35 @@ body {
 
 /* Workout Tips */
 .workout-tips {
-  background: rgba(22, 33, 62, 0.6);
   border-radius: 12px;
   padding: 1.5rem;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .workout-tips {
+  background: rgba(28, 35, 58, 0.95);
+  border-left-color: #8b9cff;
+  border: 1px solid rgba(139, 156, 255, 0.3);
   border-left: 4px solid #8b9cff;
 }
 
+.light-mode .workout-tips {
+  background: rgba(102, 126, 234, 0.08);
+  border-left-color: #667eea;
+}
+
 .workout-tips h4 {
-  color: #8b9cff;
   font-size: 1.25rem;
   margin-bottom: 1rem;
+}
+
+.dark-mode .workout-tips h4 {
+  color: #8b9cff;
+}
+
+.light-mode .workout-tips h4 {
+  color: #667eea;
 }
 
 .workout-tips ul {
@@ -763,18 +871,32 @@ body {
 }
 
 .workout-tips li {
-  color: #b8b8d1;
   padding: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
+}
+
+.dark-mode .workout-tips li {
+  color: #b8b8d1;
+}
+
+.light-mode .workout-tips li {
+  color: #5a6c7d;
 }
 
 .workout-tips li:before {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #8b9cff;
   font-weight: 700;
+}
+
+.dark-mode .workout-tips li:before {
+  color: #8b9cff;
+}
+
+.light-mode .workout-tips li:before {
+  color: #667eea;
 }
 
 /* Footer */
@@ -786,9 +908,10 @@ body {
 }
 
 .dark-mode .app-footer {
-  background: rgba(30, 30, 46, 0.95);
+  background: rgba(25, 25, 40, 0.98);
   color: #b8b8d1;
-  border-top: 1px solid rgba(139, 156, 255, 0.3);
+  border-top: 2px solid rgba(139, 156, 255, 0.4);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .light-mode .app-footer {
