@@ -10,7 +10,11 @@ A modern web application that generates personalized workout plans based on your
   - Focus area (Abs, Arms, Shoulders, Legs, Back, Chest, Full Body)
   - Energy level (Low, Medium, High)
 - **Comprehensive Exercise Database**: 40+ exercises with detailed instructions
-- **Modern UI**: Responsive design that works on desktop and mobile
+- **Modern UI**:
+  - Responsive design that works on desktop and mobile
+  - **Light/Dark Mode Toggle**: Switch between themes for comfortable viewing (defaults to dark mode)
+  - **Mobile Layout Toggle**: Optimize layout for mobile devices with a single click
+  - Eye-friendly dark theme with enhanced contrast
 - **Docker Ready**: Single container deployment with Docker Compose
 
 ## 🚀 Quick Start
@@ -83,10 +87,24 @@ A modern web application that generates personalized workout plans based on your
 
 ## 📖 How to Use
 
-1. **Set Your Workout Duration**
+### Customizing Your Display
+
+1. **Theme Selection**
+   - Click the **☀️ Light / 🌙 Dark** button in the header to toggle between light and dark modes
+   - Dark mode is enabled by default for comfortable viewing
+   - Your preference persists during your session
+
+2. **Mobile Layout**
+   - Click the **📱 Mobile / 💻 Desktop** button to switch between layout modes
+   - Mobile mode optimizes the interface for smaller screens
+   - Desktop mode provides a wider, multi-column layout
+
+### Creating Your Workout
+
+3. **Set Your Workout Duration**
    - Use the slider to select how long you want to exercise (15-90 minutes)
 
-2. **Choose Your Focus Area**
+4. **Choose Your Focus Area**
    - Select which muscle group you want to target:
      - **Abs & Core**: Core strengthening exercises
      - **Arms**: Biceps and triceps workouts
@@ -96,13 +114,13 @@ A modern web application that generates personalized workout plans based on your
      - **Chest**: Chest development exercises
      - **Full Body**: Complete body workouts
 
-3. **Select Your Energy Level**
+5. **Select Your Energy Level**
    - **Low Energy**: Lighter workout with more rest periods
    - **Medium Energy**: Balanced workout intensity
    - **High Energy**: Intense workout with shorter rest periods
 
-4. **View Your Personalized Workout**
-   - The workout plan updates automatically as you adjust settings
+6. **Generate Your Workout**
+   - Click the **🔄 Generate Workout** button to create your personalized plan
    - Each exercise includes:
      - Number of sets and reps
      - Rest time between sets
@@ -272,12 +290,24 @@ To add more exercises, edit `server/data/exercises.json`:
 }
 ```
 
-## 📱 Browser Support
+## 📱 Browser Support & Compatibility
 
+### Supported Browsers
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+
+### Mobile Compatibility
+- **Responsive Design**: Automatically adapts to screen size
+- **Mobile Layout Toggle**: Manual control for mobile-optimized view
+- **Touch-Friendly**: All controls work seamlessly on touch devices
+- **Tested On**: iOS Safari, Chrome Mobile, Samsung Internet
+
+### Accessibility Features
+- **Theme Options**: Light and dark modes for different lighting conditions
+- **High Contrast**: Enhanced contrast in dark mode for better readability
+- **Flexible Layout**: Choose between desktop and mobile layouts regardless of device
 
 ## 🤝 For Gym Owners
 
@@ -315,7 +345,11 @@ Potential features to add:
 - Integration with fitness trackers
 - Multi-language support
 - Custom exercise library management
+- Theme preference persistence (localStorage)
+- Additional color themes
 
 ---
 
 **Built with ❤️ for fitness enthusiasts**
+
+**© BluMorpho 2026 | Ty Fletcher**
