@@ -95,7 +95,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>© 2026 Workout Recommendation Service | Stay Fit, Stay Healthy</p>
+        <p>BluMorpho - Ty Fletcher 2026</p>
       </footer>
     </div>
   );
