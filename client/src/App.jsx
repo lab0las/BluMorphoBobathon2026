@@ -95,7 +95,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>BluMorpho - Ty Fletcher 2026</p>
+        <p>© BluMorpho 2026 | Ty Fletcher</p>
       </footer>
     </div>
   );
