@@ -42,32 +42,19 @@ function App() {
     }
   }, []);
 
-  // Handle input changes with debouncing for real-time updates
+  // Handle input changes - store inputs but don't auto-fetch
   const handleInputChange = useCallback((newInputs) => {
     setInputs(newInputs);
-    
-    // Clear existing timer
-    if (debounceTimer) {
-      clearTimeout(debounceTimer);
-    }
-    
-    // Set new timer for debounced API call
-    const timer = setTimeout(() => {
-      fetchWorkout(newInputs);
-    }, 500); // 500ms debounce
-    
-    setDebounceTimer(timer);
-  }, [debounceTimer, fetchWorkout]);
+  }, []);
+
+  // Manual refresh function
+  const handleRefresh = useCallback(() => {
+    fetchWorkout(inputs);
+  }, [inputs, fetchWorkout]);
 
   // Initial load
   useEffect(() => {
     fetchWorkout(inputs);
-    // Cleanup timer on unmount
-    return () => {
-      if (debounceTimer) {
-        clearTimeout(debounceTimer);
-      }
-    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -86,14 +73,21 @@ function App() {
               <div className="form-container">
                 <h2 className="form-title">Your Preferences</h2>
                 <WorkoutForm onInputChange={handleInputChange} />
+                <button
+                  className="refresh-button"
+                  onClick={handleRefresh}
+                  disabled={loading}
+                >
+                  {loading ? '⏳ Generating...' : '🔄 Generate Workout'}
+                </button>
               </div>
             </aside>
 
             <section className="main-content">
-              <WorkoutDisplay 
-                workout={workout} 
-                loading={loading} 
-                error={error} 
+              <WorkoutDisplay
+                workout={workout}
+                loading={loading}
+                error={error}
               />
             </section>
           </div>
