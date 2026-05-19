@@ -63,7 +63,13 @@ function App() {
       <header className="app-header">
         <div className="header-content">
           <div className="header-top">
-            <h1>🏋️ Workout Recommendation Service</h1>
+            <div className="header-title-section">
+              <div className="header-emoji">🏋️</div>
+              <div className="header-text">
+                <h1>Workout Recommendation Service</h1>
+                <p className="header-subtitle">Get a personalized workout plan tailored to your needs</p>
+              </div>
+            </div>
             <div className="header-controls">
               <button
                 className="toggle-button"
@@ -81,7 +87,6 @@ function App() {
               </button>
             </div>
           </div>
-          <p className="header-subtitle">Get a personalized workout plan tailored to your needs</p>
         </div>
       </header>
 
